@@ -5,7 +5,7 @@ import numpy as np
 tf.disable_v2_behavior()
 
 # Load FaceNet model
-with tf.gfile.GFile('20180402-114759.pb', 'rb') as f:
+with tf.gfile.GFile('model/20180402-114759.pb', 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
 
