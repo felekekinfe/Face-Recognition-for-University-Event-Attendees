@@ -12,8 +12,8 @@ def crop_face(img_folder_path,cropped_output_path):
     for img_file in os.listdir(img_folder_path):
         input_img = os.path.join(img_folder_path, img_file)
 
-        if not os.path.isdir(input_img):
-            continue
+        # if not os.path.isdir(input_img):
+        #     continue
 
         img = cv2.imread(input_img)
 
@@ -41,3 +41,4 @@ def crop_face(img_folder_path,cropped_output_path):
 if __name__=='__main__':
     img_path = ''  
     cropped_output_path = ''
+    crop_face(img_folder_path=img_path,cropped_output_path=cropped_output_path)
