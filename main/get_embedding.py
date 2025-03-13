@@ -21,6 +21,8 @@ phase_train = graph.get_tensor_by_name("phase_train:0")
 """this function used for creating a new embedding for a given picture 
 which used to compare with already known embedding for verification"""
 def get_embedding(img):
+    print(img)
+    img=cv2.imread(img)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = (img / 255.0 - 0.5) * 2.0  
     img = np.expand_dims(img, axis=0)

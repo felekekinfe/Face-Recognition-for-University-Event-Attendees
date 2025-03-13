@@ -40,5 +40,5 @@ def create_embedding(saving_path,folder_path):
 
 if __name__=='__main__':
     saving_path='embeddings'
-    folder_path='best'
+    folder_path='Tdataset'
     create_embedding(saving_path=saving_path,folder_path=folder_path)
