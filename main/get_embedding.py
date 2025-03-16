@@ -32,3 +32,4 @@ def get_embedding(img):
     })
     print(f"Embedding: {embedding[0][:5]}...")  
     return embedding[0]
+

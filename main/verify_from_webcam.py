@@ -89,6 +89,7 @@ def load_embedding_and_verify_image(image_path=None, embedding_path=None):
 
     # Crop image to 160x160
     img = verification_face_crop(image_path)  # returns verify_cropped_img path
+    #img=image_path
     
     if not img or not os.path.exists(img):
         print("Failed to crop face")
@@ -103,6 +104,8 @@ def load_embedding_and_verify_image(image_path=None, embedding_path=None):
 
     # Compare to known embeddings
     known_embeddings = load_embedding(embedding_path)
+  
+    
     
     if not known_embeddings:
         print("No known embeddings found")
@@ -115,11 +118,18 @@ def load_embedding_and_verify_image(image_path=None, embedding_path=None):
             min_dist = dist
 
     # Return result based on threshold
-    if min_dist < 0.8:
+    print(min_dist)
+    if min_dist < 0.7:
         return "Present"
     return "Not Present"
+    
 
 if __name__ == "__main__":
+    
     # Specify your embedding path here
-    embedding_path = "embeddings.npy"
+    embedding_path = "embeddings/embeddings.npy"
+    # capture_and_verify_face(embedding_path)
+
     capture_and_verify_face(embedding_path)
+
+
