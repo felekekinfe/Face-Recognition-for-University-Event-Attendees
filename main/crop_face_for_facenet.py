@@ -16,7 +16,7 @@ def verification_face_crop(verify_img=None, verify_cropped_path=None):
 
         output_path = os.path.join(verify_cropped_path, img_name)
 
-        # Debugging: Check if the image can be loaded
+        # Check if the image can be loaded
         print(f"Attempting to load image from {verify_img}")
         verify_img = cv2.imread(verify_img)
         
@@ -24,10 +24,10 @@ def verification_face_crop(verify_img=None, verify_cropped_path=None):
             print(f"Failed to load image {verify_img}. Check if the path is correct.")
             return None
         
-        # Assuming detect_faces() is the function that detects faces in the image
+        # detect_faces() is the function that detects faces in the image
         faces = detector.detect_faces(verify_img)
         
-        # Debugging: Check if any faces are detected
+        # Check if any faces are detected
         if len(faces) == 0:
             print("No faces detected.")
             return None
@@ -40,7 +40,7 @@ def verification_face_crop(verify_img=None, verify_cropped_path=None):
             # Resize the cropped face to 160x160
             face_img = cv2.resize(face_img, (160, 160))
             
-            # Debugging: Check if face is cropped and resized correctly
+            # Check if face is cropped and resized correctly
             if face_img is not None and face_img.shape[0] == 160 and face_img.shape[1] == 160:
                 print(f"Face cropped and resized to {face_img.shape}")
             else:
