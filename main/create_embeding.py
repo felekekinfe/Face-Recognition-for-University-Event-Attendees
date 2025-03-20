@@ -31,13 +31,9 @@ def create_embedding(saving_path, folder_path):
                 photo_path = os.path.join(person_path, photo)
                 print(f"Photo path: {photo_path}")
                 
-                # Ensure the file is an image (optional check)
-                if not photo.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
-                    print(f"Skipping non-image file: {photo_path}")
-                    continue
 
                 try:
-                    #img = load_image(photo_path)
+                    
                     embedding = get_embedding(photo_path)  
                     person_embedding.append(embedding)
                 except Exception as e:
@@ -56,7 +52,7 @@ def create_embedding(saving_path, folder_path):
 
 if __name__ == '__main__':
     saving_path = 'embeddings/embeddings.npy'  # Ensure the extension is .npy
-    folder_path = 'Tdataset'
+    folder_path = 'dataset'
     
     # Create embeddings
     create_embedding(saving_path=saving_path, folder_path=folder_path)
