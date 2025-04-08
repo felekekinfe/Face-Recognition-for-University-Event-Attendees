@@ -79,6 +79,11 @@ def load_embedding_and_verify_image(image_path=None, embedding_path=None):
 
     # Crop image to 160x160
     img = verification_face_crop(image_path)  # returns verify_cropped_img path
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> a0453fdee87332f681bb0c6d12a827aeb17aa16c
     if not img or not os.path.exists(img):
         print("Failed to crop face")
         return "Error"
@@ -111,4 +116,9 @@ def load_embedding_and_verify_image(image_path=None, embedding_path=None):
 if __name__ == "__main__":
     # Specify your embedding path here
     embedding_path = "embeddings/embeddings.npy"
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> a0453fdee87332f681bb0c6d12a827aeb17aa16c
     capture_and_verify_face(embedding_path)
